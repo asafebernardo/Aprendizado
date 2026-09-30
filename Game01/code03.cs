@@ -3,8 +3,8 @@ using System;
 
 class Inimigo{
     string nome; 
-    int vida;
-    int dano;
+    private int vida;
+    public int dano;
 
     public Inimigo(string nome, int vida, int dano){
         this.nome = nome;
@@ -15,6 +15,10 @@ class Inimigo{
     public void Atacar(){
         Console.WriteLine($"{nome} atacou causando {dano} de dano!");
     }
+
+    void Curar(){
+        vida += 20;
+    }
 }
 
 class Program
@@ -23,5 +27,6 @@ class Program
     {
         Inimigo orc = new Inimigo("Orc", 300, 75);
         orc.Atacar();
+
     }
 }
